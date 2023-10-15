@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Post_Controller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [
+        'title' => 'Home',
+    ]);
+});
+
+Route::get('/posts', [Post_Controller::class, 'index']);
+
+Route::get('posts/{slug}', [Post_Controller::class, 'find_post']);
+
+Route::get('/about', function () {
+    return view('profile.about', [
+        'title' => 'About',
+        'name' => 'Deo',
+        'email' => 'deo@gmail.com',
+        'image' => 'deo.jpg',
+    ]);
 });
 
 Route::get('/dashboard', function () {
@@ -28,4 +44,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
