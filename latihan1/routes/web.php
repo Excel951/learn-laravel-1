@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Post_Controller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Utama_Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,24 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [git 
-        'title' => 'Home',
-    ]);
-});
+Route::get('/', [Utama_Controller::class, 'index']);
 
 Route::get('/posts', [Post_Controller::class, 'index']);
 
 Route::get('posts/{slug}', [Post_Controller::class, 'find_post']);
 
-Route::get('/about', function () {
-    return view('profile.about', [
-        'title' => 'About',
-        'name' => 'Deo',
-        'email' => 'deo@gmail.com',
-        'image' => 'deo.jpg',
-    ]);
-});
+Route::get('/about', [Utama_Controller::class, 'about']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
