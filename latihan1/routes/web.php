@@ -20,7 +20,7 @@ Route::get('/', [Utama_Controller::class, 'index']);
 
 Route::get('/posts', [Post_Controller::class, 'index']);
 
-Route::get('posts/{slug}', [Post_Controller::class, 'find_post']);
+Route::get('/posts/{post:slug}', [Post_Controller::class, 'find_post']);
 
 Route::get('/about', [Utama_Controller::class, 'about']);
 

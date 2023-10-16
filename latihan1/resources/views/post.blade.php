@@ -2,9 +2,10 @@
 
 @section('container')
 <article>
-    <h2>{{ $article['title'] }}</h2>
-    <h6>By: {{$article['author']}}</h6>
-    <p>{{ $article['body'] }}</p>
+    <h2>{{ $article->title }}</h2>
+    
+    {{-- Menjalankan php echo tanpa escape character (tag html dijalankan)--}}
+    {!! $article->body !!}
 </article>
 
 <button class="btn"><a href="/posts">Back to Post</a></button>
