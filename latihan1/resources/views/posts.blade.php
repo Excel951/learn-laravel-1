@@ -10,7 +10,7 @@
                     <h3> <a href='posts/{{$article->slug}}'> {{ $article->title }} </a> </h3>
                 </div>
             </div>
-            <p class="text-truncate">{{ $article->body }}</p>
+            <p class="text-truncate">{!! $article->body !!}</p>
         </article>
     @endforeach
 @endsection
