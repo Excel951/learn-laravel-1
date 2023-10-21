@@ -10,5 +10,5 @@
     {!! $article->body !!}
 </article>
 
-<button class="btn"><a href="/posts">Back to Post</a></button>
+<a href="/posts"><button class="btn">Back to Post</button></a>
 @endsection

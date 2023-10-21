@@ -12,6 +12,7 @@ class Post_Controller extends Controller
     {
         $blog_posts = Post::all();
 
+        // return $blog_posts;
         return view('posts', [
             'title' => 'Posts',
             'articles' => $blog_posts
