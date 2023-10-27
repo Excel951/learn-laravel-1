@@ -7,9 +7,9 @@
     <ul>
         @foreach ($authors as $author)
             <li>
-                <div class="row align-items-end justify-content-between">
+                <div class="row align-items-end justify-co  ntent-between">
                     <div class="col-6">
-                        <h5> <a href='/authors/{{$author->name}}'> {{ $author->name }} </a> </h5>
+                        <h5> <a href='/authors/{{$author->username}}'> {{ $author->name }} </a> </h5>
                     </div>
                 </div>
             </li>

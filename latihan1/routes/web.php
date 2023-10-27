@@ -34,14 +34,7 @@ Route::get('/categories/{category:slug}', [Category_Controller::class, 'find_pos
 
 Route::get('/authors', [Author_Controller::class, 'index']);
 
-Route::get('/authors/{user:name}', function (User $user) {
-    $blog_posts = Post::all()->where('user_id', $user->id);
-
-    return view('posts', [
-        'title' => 'Posts',
-        'articles' => $blog_posts
-    ]);
-});
+Route::get('/authors/{user:username}', [Author_Controller::class, 'find_author']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
