@@ -18,9 +18,9 @@ public function index() {
     public function find_post_by_category(Category $category) {
         $blog_posts = Post::all()->where('category_id', $category->id);
 
-        return view('category', [
+        return view('posts', [
             'title' => 'Categories '.$category->name,
-            'page_name' => $category->name,
+            'page_name' => 'Category : '.$category->name,
             'articles' => $blog_posts
         ]);
     }

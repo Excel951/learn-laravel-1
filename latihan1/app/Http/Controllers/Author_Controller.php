@@ -21,7 +21,8 @@ class Author_Controller extends Controller
         $blog_posts = Post::all()->where('user_id', $user->id);
 
         return view('posts', [
-            'title' => 'Posts',
+            'title' => 'Posts by '.$user->name,
+            'page_name' => 'Author : '.$user->name,
             'articles' => $blog_posts
         ]);
     }

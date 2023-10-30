@@ -16,6 +16,7 @@ class Post_Controller extends Controller
         // return $blog_posts;
         return view('posts', [
             'title' => 'Posts',
+            'page_name' => 'All Posts',
             'articles' => $blog_posts
         ]);
     }

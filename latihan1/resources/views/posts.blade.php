@@ -3,6 +3,7 @@
 @extends('layouts.main')
 
 @section('container')
+    <h2 class="text-center mb-5">{{$page_name}}</h2>
     @foreach ($articles as $article)
         <article class="mb-5 border-bottom pb-3">
             <div class="row align-items-end justify-content-between mb-3">
