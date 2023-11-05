@@ -1,8 +1,9 @@
-{{-- @dd($articles) --}}
+{{-- @dd($page_name) --}}
 
 @extends('layouts.main')
 
 @section('container')
+    <h2 class="text-center mt-3 mb-5">{{ $page_name!==null ? $page_name : "" }}</h2>
     @foreach ($articles as $article)
         <article class="mb-5 border-bottom pb-3">
             <div class="row align-items-end justify-content-between mb-3">

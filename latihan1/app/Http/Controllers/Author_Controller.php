@@ -18,11 +18,12 @@ class Author_Controller extends Controller
 
     public function find_author(User $user)
     {
-        $blog_posts = Post::all()->where('user_id', $user->id);
+        // $blog_posts = Post::with(['category', 'user'])->latest()->get()->where('user_id', $user->id);
 
         return view('posts', [
             'title' => 'Posts',
-            'articles' => $blog_posts
+            'page_name' => 'Created by : ' . $user->name,
+            'articles' => $user->posts->load(['category', 'user'])
         ]);
     }
 }

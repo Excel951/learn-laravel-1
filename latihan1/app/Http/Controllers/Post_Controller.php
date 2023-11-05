@@ -11,11 +11,12 @@ class Post_Controller extends Controller
     public function index()
     {
         // $blog_posts = Post::all();
-        $blog_posts = Post::latest()->get();
+        $blog_posts = Post::with(['user', 'category'])->latest()->get();
 
         // return $blog_posts;
         return view('posts', [
             'title' => 'Posts',
+            'page_name' => 'All Posts',
             'articles' => $blog_posts
         ]);
     }
