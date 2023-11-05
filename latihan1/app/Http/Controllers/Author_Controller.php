@@ -23,7 +23,7 @@ class Author_Controller extends Controller
         return view('posts', [
             'title' => 'Posts',
             'page_name' => 'Created by : ' . $user->name,
-            'articles' => $user->posts->load(['category', 'user'])
+            'articles' => $user->posts
         ]);
     }
 }

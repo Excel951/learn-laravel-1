@@ -23,7 +23,7 @@ class Category_Controller extends Controller
         return view('posts', [
             'title' => 'Categories ' . $category->name,
             'page_name' => 'Categories : ' . $category->name,
-            'articles' => $category->posts->load(['category', 'user'])
+            'articles' => $category->posts
         ]);
     }
 }
