@@ -1,3 +1,4 @@
+    {{-- @dd('home'=='Home') --}}
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Deo's Blog</a>
@@ -7,16 +8,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ $title === 'home' ? 'active' : '' }}" href="/">Home</a>
+            <a class="nav-link {{ $title == 'Home' ? 'active' : '' }}" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $title === 'blog' ? 'active' : '' }}" href="/posts">Blog</a>
+            <a class="nav-link {{ $title == 'Blog' ? 'active' : '' }}" href="/posts">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $title === 'category' ? 'active' : '' }}" href="/categories">Category</a>
+            <a class="nav-link {{ $title == 'Category' ? 'active' : '' }}" href="/categories">Category</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ $title === 'about' ? 'active' : '' }}" href="/about">About</a>
+            <a class="nav-link {{ $title == 'About' ? 'active' : '' }}" href="/about">About</a>
           </li>
         </ul>
       </div>
